@@ -1,0 +1,381 @@
+@charset "utf-8";
+
+.mainvisual {
+  background-image: url(../img/main-visual.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  margin-bottom: 70px;
+  z-index: -2;
+  background-attachment: fixed;
+
+  h1 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+#concept {
+  position: relative;
+
+  .text {
+    text-align: center;
+    margin-bottom: 80px;
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .medium {
+      font-size: 0.875rem;
+    }
+  }
+
+  .secret {
+    display: flex;
+    margin-bottom: 20px;
+
+    @media(max-width:700px) {
+      flex-direction: column;
+    }
+
+    .content-title {
+      width: 25%;
+      background-color: #CFB18B;
+      color: #fff;
+      font-family: "Tenor Sans", sans-serif;
+
+      @media(max-width:700px) {
+        width: 100%;
+        height: 200px;
+      }
+
+      p {
+        width: 100%;
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 50%;
+        overflow-wrap: break-word;
+
+        @media(max-width:700px) {
+          margin-top: 20px;
+        }
+      }
+
+    }
+
+    .card-wrap {
+      display: flex;
+      background-color: #000;
+      padding: 20px 0;
+      width: 75%;
+
+      @media(max-width:700px) {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      .card {
+        width: calc(100%/3);
+        text-align: center;
+        padding: 30px 40px;
+        border-right: 1px solid #CFB18B;
+
+        @media(max-width:700px) {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid #CFB18B;
+        }
+
+        &:last-child {
+          @media(max-width:700px) {
+            border-bottom: none;
+          }
+        }
+  
+        .number {
+          font-size: 4rem;
+          font-family: "Tenor Sans", sans-serif;
+        }
+  
+        h4 {
+          font-family:"Kaisei Tokumin", serif;
+          font-size: 1.35rem;
+          margin: 35px 0;
+        }
+  
+        p {
+          font-size: 0.85rem;
+        }
+      }
+
+    }
+
+    
+  }
+
+    .more {
+      position:relative;
+      color:#fff;
+      font-size: 1.25rem;
+      padding: 10px 70px 5px  10px;
+      display:inline-block;
+      text-decoration: none;
+      outline: none;
+      margin-left: 80%;
+      transition: all 0.3s;
+
+      @media(max-width:700px) {
+        margin-left: 30px;
+      }
+
+      &:hover {
+        color: #CFB18B;
+      }
+
+
+      &::before,&::after {
+        content:'';
+        position:absolute;
+        z-index:1;
+        bottom:0;
+        left:0;
+        background:#fff;
+        width:100%;
+        height:2px;
+        transition:all 0.3s ease-in-out;
+      }
+
+      &::after {
+        width: 0;
+        background: #CFB18B;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      span::after {
+        content: "";
+        position: absolute;
+        bottom:-4px;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+        transform: rotate(45deg);
+        transition: all 0.3s;
+      }
+
+      &:hover span::after {
+        border-top: 1px solid #CFB18B;
+        border-right: 1px solid #CFB18B;
+      }
+    }
+  
+}
+
+#product {
+
+  .section-title {
+    margin-bottom: 0;
+
+    @media(max-width:700px) {
+      margin-bottom: 30px;
+    }
+  }
+
+    .slide {  
+      position  : relative;
+      overflow  : hidden;
+      width     : 100%;
+      height: 600px;
+      margin     : auto;    
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px;
+        align-items: center;
+        position   : absolute;
+        width      : inherit;
+        height     : inherit;
+        opacity    : 0;
+        animation  : slideAnime 27s ease infinite;
+      
+
+          @media(max-width:700px) {
+            flex-direction: column;
+            justify-content: flex-start;
+          }
+
+
+          &:nth-of-type(1) {
+            animation-delay: 0s 
+          }
+
+          &:nth-of-type(2) {
+            animation-delay: 9s 
+          }
+
+          &:nth-of-type(3) {
+            animation-delay: 18s 
+          }
+
+          .item-left {
+            width: 50%;
+      
+            @media(max-width:700px) {
+              width: 80%;
+              margin-bottom: 40px;
+            }
+        }
+
+      }
+
+    }
+
+     /*=== スライドのアニメーション ========================= */
+    @keyframes slideAnime{
+      0% { opacity: 0 }
+      4% { opacity: 1 }
+      29% { opacity: 1 }
+      33% { opacity: 0 }
+      100% { opacity: 0 }
+    }
+
+    
+    .item-right {
+      margin-left: 20px;
+      width: 50%;
+
+      @media(max-width:700px) {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+      }
+
+      h4 {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+      }
+
+      p {
+        max-width: 400px;
+        margin-bottom: 10px;
+
+        @media(max-width:700px) {
+          margin: 0 auto  ;
+        }
+      }
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+
+    @media(max-width:700px) {
+      bottom: 50px;
+    }
+    
+    
+    a {
+      color: #CFB18B;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: -60px;
+        top: -10px;
+        border: 1px solid #CFB18B;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        transition: all 0.5s;
+        display: inline-block;
+        margin-right: 10px;
+      }
+  
+      &::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        right: -32px;
+        width: 5px;
+        height: 5px;
+        border-top: 1px solid #CFB18B;
+        border-right: 1px solid #CFB18B;
+        transform: rotate(45deg);
+      }
+  
+      &:hover::before {
+        transform: scale(1.2);
+      }
+      
+    }
+
+    
+
+  
+}
+
+#flavor {
+
+  .section-title {
+    margin-top: 0;
+
+    @media(max-width:700px) {
+      margin-top: 30px;
+    }
+  }
+  
+
+  .slider {
+    
+    
+      li {
+        max-width: 280px; 
+
+        img { 
+          border: 1px solid #CFB18B;
+        }
+      }
+
+  }
+}
+
+
+
+
+#access {
+  margin-bottom: 180px;
+
+  iframe {
+    width: 100%;
+  }
+
+  .adress {
+    margin-top: 50px;
+
+    span {
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+  }
+}
+
